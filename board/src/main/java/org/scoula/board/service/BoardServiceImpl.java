@@ -23,7 +23,7 @@ import static org.scoula.common.util.UploadFiles.upload;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
     final private BoardMapper mapper;
-    private final static String BASE_DIR = "c:/upload/board";
+    private final static String BASE_DIR = "c:/KB_Spring/board/upload/board";
 
     @Override
     public List<BoardDTO> getList() {
