@@ -15,7 +15,8 @@ import org.springframework.web.servlet.view.JstlView;
 @ComponentScan(basePackages={
         "org.scoula.controller",
         "org.scoula.exception",
-        "org.scoula.board.controller"
+        "org.scoula.board.controller",
+        "org.scoula.weather.controller"
 })
 public class ServletConfig implements WebMvcConfigurer {
     @Bean
@@ -29,6 +30,19 @@ public class ServletConfig implements WebMvcConfigurer {
         registry
                 .addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
+
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        registry.addResourceHandler("/swagger-resources/**")
+                .addResourceLocations("classpath:/META-INF/resources/resources/");
+
+        registry.addResourceHandler("/v2/api-docs")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
     }
 
     @Override
