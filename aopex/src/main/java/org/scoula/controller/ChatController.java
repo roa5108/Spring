@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 public class ChatController {
 
     @MessageMapping("/hello")
-    @SendTo("/topiic/greetings")
+    @SendTo("/topic/greetings")
     public GreetingMessage greeting(GreetingMessage message) throws Exception {
         log.info("greeting: " + message);
         return message;
